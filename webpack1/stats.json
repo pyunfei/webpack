@@ -1,0 +1,467 @@
+{
+  "errors": [],
+  "warnings": [
+    "configuration\nThe 'mode' option has not been set, webpack will fallback to 'production' for this value. Set 'mode' option to 'development' or 'production' to enable defaults for each environment.\nYou can also set it to 'none' to disable any default behavior. Learn more: https://webpack.js.org/configuration/mode/"
+  ],
+  "version": "4.41.5",
+  "hash": "7ba2faec6a28b5c95d1d",
+  "time": 217,
+  "builtAt": 1578811425243,
+  "publicPath": "",
+  "outputPath": "/Users/pengyunfei/Public/webapck/webpack1/dist",
+  "assetsByChunkName": {
+    "lazy": "0.bundle.js",
+    "main": "bundle.js"
+  },
+  "assets": [
+    {
+      "name": "0.bundle.js",
+      "size": 91,
+      "chunks": [
+        0
+      ],
+      "chunkNames": [
+        "lazy"
+      ],
+      "info": {},
+      "emitted": true
+    },
+    {
+      "name": "bundle.js",
+      "size": 2174,
+      "chunks": [
+        1
+      ],
+      "chunkNames": [
+        "main"
+      ],
+      "info": {},
+      "emitted": true
+    }
+  ],
+  "filteredAssets": 0,
+  "entrypoints": {
+    "main": {
+      "chunks": [
+        1
+      ],
+      "assets": [
+        "bundle.js"
+      ],
+      "children": {},
+      "childAssets": {}
+    }
+  },
+  "namedChunkGroups": {
+    "main": {
+      "chunks": [
+        1
+      ],
+      "assets": [
+        "bundle.js"
+      ],
+      "children": {},
+      "childAssets": {}
+    },
+    "lazy": {
+      "chunks": [
+        0
+      ],
+      "assets": [
+        "0.bundle.js"
+      ],
+      "children": {},
+      "childAssets": {}
+    }
+  },
+  "chunks": [
+    {
+      "id": 0,
+      "rendered": true,
+      "initial": false,
+      "entry": false,
+      "size": 20,
+      "names": [
+        "lazy"
+      ],
+      "files": [
+        "0.bundle.js"
+      ],
+      "hash": "9a6e68b5c71fa5eaebea",
+      "siblings": [],
+      "parents": [
+        1
+      ],
+      "children": [],
+      "childrenByOrder": {},
+      "modules": [
+        {
+          "id": 2,
+          "identifier": "/Users/pengyunfei/Public/webapck/webpack1/src/lazy.js",
+          "name": "./src/lazy.js",
+          "index": 2,
+          "index2": 2,
+          "size": 20,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            0
+          ],
+          "issuer": "/Users/pengyunfei/Public/webapck/webpack1/src/index.js",
+          "issuerId": 0,
+          "issuerName": "./src/index.js",
+          "issuerPath": [
+            {
+              "id": 0,
+              "identifier": "/Users/pengyunfei/Public/webapck/webpack1/src/index.js",
+              "name": "./src/index.js",
+              "profile": {
+                "factory": 58,
+                "building": 43
+              }
+            }
+          ],
+          "profile": {
+            "factory": 6,
+            "building": 1
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "assets": [],
+          "reasons": [
+            {
+              "moduleId": 0,
+              "moduleIdentifier": "/Users/pengyunfei/Public/webapck/webpack1/src/index.js",
+              "module": "./src/index.js",
+              "moduleName": "./src/index.js",
+              "type": "import()",
+              "userRequest": "./lazy",
+              "loc": "2:0-46"
+            }
+          ],
+          "usedExports": true,
+          "providedExports": null,
+          "optimizationBailout": [
+            "ModuleConcatenation bailout: Module is not an ECMAScript module"
+          ],
+          "depth": 1,
+          "source": "module.exports = \"2\""
+        }
+      ],
+      "filteredModules": 0,
+      "origins": [
+        {
+          "moduleId": 0,
+          "module": "/Users/pengyunfei/Public/webapck/webpack1/src/index.js",
+          "moduleIdentifier": "/Users/pengyunfei/Public/webapck/webpack1/src/index.js",
+          "moduleName": "./src/index.js",
+          "loc": "2:0-46",
+          "request": "./lazy",
+          "reasons": []
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "rendered": true,
+      "initial": true,
+      "entry": true,
+      "size": 141,
+      "names": [
+        "main"
+      ],
+      "files": [
+        "bundle.js"
+      ],
+      "hash": "91bb8ef3cac26fa4fae9",
+      "siblings": [],
+      "parents": [],
+      "children": [
+        0
+      ],
+      "childrenByOrder": {},
+      "modules": [
+        {
+          "id": 0,
+          "identifier": "/Users/pengyunfei/Public/webapck/webpack1/src/index.js",
+          "name": "./src/index.js",
+          "index": 0,
+          "index2": 1,
+          "size": 121,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            1
+          ],
+          "issuer": null,
+          "issuerId": null,
+          "issuerName": null,
+          "issuerPath": null,
+          "profile": {
+            "factory": 58,
+            "building": 43
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "assets": [],
+          "reasons": [
+            {
+              "moduleId": null,
+              "moduleIdentifier": null,
+              "module": null,
+              "moduleName": null,
+              "type": "single entry",
+              "userRequest": "/Users/pengyunfei/Public/webapck/webpack1/src/index.js",
+              "loc": "main"
+            }
+          ],
+          "usedExports": true,
+          "providedExports": null,
+          "optimizationBailout": [
+            "ModuleConcatenation bailout: Module is not an ECMAScript module"
+          ],
+          "depth": 0,
+          "source": "const hello = require('./hello');\nimport(/* webpackChunkName: \"lazy\" */'./lazy').then(r => {\n  console.log(r.default)\n});"
+        },
+        {
+          "id": 1,
+          "identifier": "/Users/pengyunfei/Public/webapck/webpack1/src/hello.js",
+          "name": "./src/hello.js",
+          "index": 1,
+          "index2": 0,
+          "size": 20,
+          "cacheable": true,
+          "built": true,
+          "optional": false,
+          "prefetched": false,
+          "chunks": [
+            1
+          ],
+          "issuer": "/Users/pengyunfei/Public/webapck/webpack1/src/index.js",
+          "issuerId": 0,
+          "issuerName": "./src/index.js",
+          "issuerPath": [
+            {
+              "id": 0,
+              "identifier": "/Users/pengyunfei/Public/webapck/webpack1/src/index.js",
+              "name": "./src/index.js",
+              "profile": {
+                "factory": 58,
+                "building": 43
+              }
+            }
+          ],
+          "profile": {
+            "factory": 6,
+            "building": 1
+          },
+          "failed": false,
+          "errors": 0,
+          "warnings": 0,
+          "assets": [],
+          "reasons": [
+            {
+              "moduleId": 0,
+              "moduleIdentifier": "/Users/pengyunfei/Public/webapck/webpack1/src/index.js",
+              "module": "./src/index.js",
+              "moduleName": "./src/index.js",
+              "type": "cjs require",
+              "userRequest": "./hello",
+              "loc": "1:14-32"
+            }
+          ],
+          "usedExports": true,
+          "providedExports": null,
+          "optimizationBailout": [
+            "ModuleConcatenation bailout: Module is not an ECMAScript module"
+          ],
+          "depth": 1,
+          "source": "module.exports = \"1\""
+        }
+      ],
+      "filteredModules": 0,
+      "origins": [
+        {
+          "module": "",
+          "moduleIdentifier": "",
+          "moduleName": "",
+          "loc": "main",
+          "request": "/Users/pengyunfei/Public/webapck/webpack1/src/index.js",
+          "reasons": []
+        }
+      ]
+    }
+  ],
+  "modules": [
+    {
+      "id": 0,
+      "identifier": "/Users/pengyunfei/Public/webapck/webpack1/src/index.js",
+      "name": "./src/index.js",
+      "index": 0,
+      "index2": 1,
+      "size": 121,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        1
+      ],
+      "issuer": null,
+      "issuerId": null,
+      "issuerName": null,
+      "issuerPath": null,
+      "profile": {
+        "factory": 58,
+        "building": 43
+      },
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "assets": [],
+      "reasons": [
+        {
+          "moduleId": null,
+          "moduleIdentifier": null,
+          "module": null,
+          "moduleName": null,
+          "type": "single entry",
+          "userRequest": "/Users/pengyunfei/Public/webapck/webpack1/src/index.js",
+          "loc": "main"
+        }
+      ],
+      "usedExports": true,
+      "providedExports": null,
+      "optimizationBailout": [
+        "ModuleConcatenation bailout: Module is not an ECMAScript module"
+      ],
+      "depth": 0,
+      "source": "const hello = require('./hello');\nimport(/* webpackChunkName: \"lazy\" */'./lazy').then(r => {\n  console.log(r.default)\n});"
+    },
+    {
+      "id": 1,
+      "identifier": "/Users/pengyunfei/Public/webapck/webpack1/src/hello.js",
+      "name": "./src/hello.js",
+      "index": 1,
+      "index2": 0,
+      "size": 20,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        1
+      ],
+      "issuer": "/Users/pengyunfei/Public/webapck/webpack1/src/index.js",
+      "issuerId": 0,
+      "issuerName": "./src/index.js",
+      "issuerPath": [
+        {
+          "id": 0,
+          "identifier": "/Users/pengyunfei/Public/webapck/webpack1/src/index.js",
+          "name": "./src/index.js",
+          "profile": {
+            "factory": 58,
+            "building": 43
+          }
+        }
+      ],
+      "profile": {
+        "factory": 6,
+        "building": 1
+      },
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "assets": [],
+      "reasons": [
+        {
+          "moduleId": 0,
+          "moduleIdentifier": "/Users/pengyunfei/Public/webapck/webpack1/src/index.js",
+          "module": "./src/index.js",
+          "moduleName": "./src/index.js",
+          "type": "cjs require",
+          "userRequest": "./hello",
+          "loc": "1:14-32"
+        }
+      ],
+      "usedExports": true,
+      "providedExports": null,
+      "optimizationBailout": [
+        "ModuleConcatenation bailout: Module is not an ECMAScript module"
+      ],
+      "depth": 1,
+      "source": "module.exports = \"1\""
+    },
+    {
+      "id": 2,
+      "identifier": "/Users/pengyunfei/Public/webapck/webpack1/src/lazy.js",
+      "name": "./src/lazy.js",
+      "index": 2,
+      "index2": 2,
+      "size": 20,
+      "cacheable": true,
+      "built": true,
+      "optional": false,
+      "prefetched": false,
+      "chunks": [
+        0
+      ],
+      "issuer": "/Users/pengyunfei/Public/webapck/webpack1/src/index.js",
+      "issuerId": 0,
+      "issuerName": "./src/index.js",
+      "issuerPath": [
+        {
+          "id": 0,
+          "identifier": "/Users/pengyunfei/Public/webapck/webpack1/src/index.js",
+          "name": "./src/index.js",
+          "profile": {
+            "factory": 58,
+            "building": 43
+          }
+        }
+      ],
+      "profile": {
+        "factory": 6,
+        "building": 1
+      },
+      "failed": false,
+      "errors": 0,
+      "warnings": 0,
+      "assets": [],
+      "reasons": [
+        {
+          "moduleId": 0,
+          "moduleIdentifier": "/Users/pengyunfei/Public/webapck/webpack1/src/index.js",
+          "module": "./src/index.js",
+          "moduleName": "./src/index.js",
+          "type": "import()",
+          "userRequest": "./lazy",
+          "loc": "2:0-46"
+        }
+      ],
+      "usedExports": true,
+      "providedExports": null,
+      "optimizationBailout": [
+        "ModuleConcatenation bailout: Module is not an ECMAScript module"
+      ],
+      "depth": 1,
+      "source": "module.exports = \"2\""
+    }
+  ],
+  "filteredModules": 0,
+  "logging": {
+    "webpack.buildChunkGraph.visitModules": {
+      "entries": [],
+      "filteredEntries": 5,
+      "debug": false
+    }
+  },
+  "children": []
+}
