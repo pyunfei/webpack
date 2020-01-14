@@ -5,6 +5,7 @@ const DonePlugin = require('./plugins/DonePlugin');
 const OptimizePlugin = require('./plugins/OptimizePlugin');
 const EmitPlugin = require('./plugins/EmitPlugin');
 const AutoZipPlugin = require('./plugins/AutoZipPlugin');
+const PrefetchPlugin = require('./plugins/PrefetchPlugin');
 
 module.exports = {
   mode: 'development',
@@ -14,9 +15,6 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js'
-  },
-  optimization: {
-    
   },
   module: {
     rules: [
@@ -48,8 +46,9 @@ module.exports = {
     // }),
     // new OptimizePlugin(),
     // new EmitPlugin(),
-    new AutoZipPlugin({
-      name: 'test.zip'
-    })
+    // new AutoZipPlugin({
+    //   name: 'test.zip'
+    // }),
+    new PrefetchPlugin()
   ]
 }
