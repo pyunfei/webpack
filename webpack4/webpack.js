@@ -7,6 +7,7 @@ const traverse = require("babel-traverse").default; // 遍历节点 CURD
 const generator = require("babel-generator").default; // ast->source
 const { join, dirname } = require("path").posix; //不同操作系统下的分隔符的唯一性
 const mainTemplate = fs.readFileSync("./template/main.ejs", "utf8");
+const chunkTemplate = fs.readFileSync("./template/chunk.ejs", "utf8");
 
 class Compiler {
   constructor(config) {
@@ -21,8 +22,12 @@ class Compiler {
   run(callback) {
     const { entry } = this.config;
     this.entry = entry;
-    this.modules = {};
-    this.buildModule(entry);
+    // this.modules = {};
+    // 代码块的概念
+    this.chunks = {
+      main: {}
+    };
+    this.buildModule(entry, "main");
     this.emitFiles();
   }
   /**
@@ -33,10 +38,10 @@ class Compiler {
    * 4, generator语法树(ast) 生成(源代码/source)
    * 5, https://astexplorer.net/
    */
-  buildModule(moduleId) {
+  buildModule(moduleId, chunksId) {
     const dependencies = []; // 本模块依赖ID数组
     const originSource = fs.readFileSync(moduleId, "utf8");
-    const ast = babylon.parse(originSource);
+    const ast = babylon.parse(originSource, { plugins: ["dynamicImport"] });
     traverse(ast, {
       CallExpression: nodePath => {
         if (nodePath.node.callee.name == "require") {
@@ -47,25 +52,54 @@ class Compiler {
           let dependencyModuleId = "./" + join(dirname(moduleId), moduleName);
           dependencies.push(dependencyModuleId);
           node.arguments = [types.stringLiteral(dependencyModuleId)];
+        } else if (types.isImport(nodePath.node.callee)) {
+          let node = nodePath.node;
+          let moduleName = node.arguments[0].value;
+          // ./hello.js -> src_hello_js
+          let dependencyModuleId = "./" + join(dirname(moduleId), moduleName);
+          const dependencyChunkId = dependencyModuleId
+            .slice(2)
+            .replace(/(\/|\.)/g, "_") + '.js';
+          nodePath.replaceWithSourceString(`
+            __webpack_require__.e("${dependencyModuleId}").then(__webpack_require__.t.bind(__webpack_require__,"${dependencyModuleId}"))
+          `);
+          this.buildModule(dependencyModuleId, dependencyChunkId)
         }
       }
     });
 
     const { code } = generator(ast);
-    this.modules[moduleId] = code;
+    // this.modules[moduleId] = code;
+    (this.chunks[chunkId] = this.chunks[chunkId] || {})[moduleId] = code;
 
     // 日常noop模块依赖
     dependencies.forEach(dependency => this.buildModule(dependency));
-
   }
   emitFiles() {
     const { output } = this.config;
-    const outputFile = join(output.path, output.filename);
-    const bundle = ejs.compile(mainTemplate)({
-      entry: this.entry,
-      modules: this.modules
-    });
-    fs.writeFileSync(outputFile, bundle)
+    // const outputFile = join(output.path, output.filename);
+    // const bundle = ejs.compile(mainTemplate)({
+    //   entry: this.entry,
+    //   modules: this.modules
+    // });
+    // fs.writeFileSync(outputFile, bundle, 'utf8');
+    Object.keys(this.chunks).forEach(chunkId => {
+      if (chunkId == 'main') {
+        const outputFile = join(output.path, output.filename);
+        const bundle = ejs.compile(mainTemplate)({
+          entry: this.entry,
+          modules: this.chunks[chunkId]
+        });
+        fs.writeFileSync(outputFile, bundle, 'utf8');
+      } else {
+        const outputFile = join(output.path, chunkId);
+        const bundle = ejs.compile(chunkTemplate)({
+          chunkId,
+          modules: this.chunks[chunkId]
+        });
+        fs.writeFileSync(outputFile, bundle, 'utf8');
+      }
+    })
   }
 }
 
