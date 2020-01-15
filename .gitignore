@@ -9,6 +9,8 @@
 /webpack3/dist
 /webpack4/node_modules
 /webpack4/dist
+/webpack5/node_modules
+/webpack5/dist
 /.pnp
 .pnp.js
 
