@@ -61,7 +61,7 @@ class Compiler {
             .slice(2)
             .replace(/(\/|\.)/g, "_") + '.js';
           nodePath.replaceWithSourceString(`
-            __webpack_require__.e("${dependencyModuleId}").then(__webpack_require__.t.bind(__webpack_require__,"${dependencyModuleId}"))
+            __webpack_require__.e("${dependencyChunkId}").then(__webpack_require__.t.bind(__webpack_require__,"${dependencyModuleId}"))
           `);
           this.buildModule(dependencyModuleId, dependencyChunkId)
         }
