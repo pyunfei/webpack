@@ -11,6 +11,9 @@
 /webpack4/dist
 /webpack5/node_modules
 /webpack5/dist
+/webpack6/node_modules
+/webpack6/dist
+/test/test1/node_modules
 /.pnp
 .pnp.js
 
