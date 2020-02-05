@@ -7,3 +7,4 @@
   - 基于webpack5 
 - webpack5 文件分析
 - webpack6 dll
+- webpack7 tree shaking
