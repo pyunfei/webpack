@@ -1,0 +1,2 @@
+require('archy');
+require('jasmine');
