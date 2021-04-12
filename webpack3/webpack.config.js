@@ -6,6 +6,7 @@ const OptimizePlugin = require('./plugins/OptimizePlugin');
 const EmitPlugin = require('./plugins/EmitPlugin');
 const AutoZipPlugin = require('./plugins/AutoZipPlugin');
 const PrefetchPlugin = require('./plugins/PrefetchPlugin');
+const OssPlugin = require('./plugins/OssPlugin');
 
 module.exports = {
   mode: 'development',
@@ -40,7 +41,7 @@ module.exports = {
       path: path.resolve(__dirname, 'public/index.html'),
       filename: 'index.html'
     }),
-    new CleanWebpackPlugin(),
+    // new CleanWebpackPlugin(),
     // new DonePlugin({
     //   message: '编译完成'
     // }),
@@ -49,6 +50,7 @@ module.exports = {
     // new AutoZipPlugin({
     //   name: 'test.zip'
     // }),
-    new PrefetchPlugin()
+    new PrefetchPlugin(),
+    new OssPlugin()
   ]
 }
