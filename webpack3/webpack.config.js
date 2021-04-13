@@ -20,7 +20,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.js$ | \.ts$ | \.tsx$/,
         use: {
           loader: 'babel-loader',
           options: {
@@ -34,6 +34,19 @@ module.exports = {
         include: path.resolve(__dirname, 'src'),
         exclude: /node_modules/
       },
+
+      // webpack.config.js OSS 专用
+      // {
+      //   test: /\.(jpg|png|gif|bmp|jepg)$/,
+      //   use: {
+      //     loader: 'url-loader',
+      //     options: {
+      //       limit: 0,
+      //       name: 'common/[name].[hash:6].[ext]', //图片重新命名避免冲突
+      //       publicPath: !isProduction ? '/' : 'oss的地址', // 如果是生产环境则替换成oss的地址
+      //     }
+      //   }
+      // }
     ]
   },
   plugins: [
